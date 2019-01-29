@@ -1,0 +1,18 @@
+﻿@using HospitalMessenger.Data.Models
+@model IEnumerable<Doctor>
+
+<div>
+    <h2>Все доктора.</h2>
+</div>
+<h2>@ViewBag.Name</h2>
+@{ 
+    foreach(var doctor in Model)
+    {
+        <div>
+            <h4>@doctor.Surname @doctor.Name @doctor.MiddleName</h4>
+            <p>@doctor.Age</p>
+            <p>@doctor.Position</p>
+
+        </div>
+    }
+}
