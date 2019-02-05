@@ -1,5 +1,6 @@
 ﻿using HospitalMessenger.Data.Interfeces;
 using HospitalMessenger.Data.Models;
+using Microsoft.AspNetCore.Mvc.Routing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace HospitalMessenger.Data.Mocks
                         MiddleName="Иванович",
                         Age=35,
                         Position="Старший хирург",
-                        ImageUrl=""
+                        ImageUrl="https://localhost:5001/Images/doktor.jpg"
                     },
                     new Doctor
                     {
@@ -31,12 +32,12 @@ namespace HospitalMessenger.Data.Mocks
                         MiddleName = "Петрович",
                         Age = 25,
                         Position = "Хирург",
-                        ImageUrl = ""
+                        ImageUrl = "https://localhost:5001/Images/doktor.jpg"
                     }
                 };
             }
         }
-
+        
         public Doctor GetDoctorById(int doctorId)
         {
             throw new NotImplementedException();

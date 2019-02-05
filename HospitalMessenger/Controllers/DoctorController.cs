@@ -1,4 +1,5 @@
 ﻿using HospitalMessenger.Data.Interfeces;
+using HospitalMessenger.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HospitalMessenger.Controllers
 {
-    public class DoctorController:Controller
+    public class DoctorController : Controller
     {
         private readonly IDoctorRepository _doctorRepository;
 
@@ -18,9 +19,9 @@ namespace HospitalMessenger.Controllers
 
         public ViewResult List()
         {
-            ViewBag.Name = "Список";
-            var doctors = _doctorRepository.Doctors;
-            return View(doctors);
+            DoctorViewModel vm = new DoctorViewModel();
+            vm.Doctors = _doctorRepository.Doctors;
+            return View(vm);
         }
     }
 }
