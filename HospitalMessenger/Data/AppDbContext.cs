@@ -14,5 +14,30 @@ namespace HospitalMessenger.Data
         }
 
         public DbSet<Doctor> Doctors { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Doctor>().HasData(
+                new Doctor {
+                    DoctorId = 1,
+                    Name = "Иван",
+                    Surname = "Иванов",
+                    MiddleName = "Иванович",
+                    Age = 30,
+                    ImageUrl = "https://localhost:5001/Images/doktor.jpg",
+                    Position = "Хирург"
+                },
+                new Doctor
+                {
+                    DoctorId = 2,
+                    Name = "Петр",
+                    Surname = "Петров",
+                    MiddleName = "Петрович",
+                    Age = 35,
+                    ImageUrl = "https://localhost:5001/Images/doktor.jpg",
+                    Position = "Хирург"
+                });      
+        }
     }
 }
+

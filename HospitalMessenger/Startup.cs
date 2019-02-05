@@ -25,7 +25,7 @@ namespace HospitalMessenger
         public Startup(IHostingEnvironment hostingEnvironment)
         {
             _configurationRoot = new ConfigurationBuilder().SetBasePath(hostingEnvironment.ContentRootPath)
-                .AddJsonFile("appsetting.json")
+                .AddJsonFile("appsettings.json")
                 .Build();
         }
         public void ConfigureServices(IServiceCollection services)
@@ -48,6 +48,7 @@ namespace HospitalMessenger
             app.UseMvc(routes => routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{Id?}"));
+            
         }
     }
 }
