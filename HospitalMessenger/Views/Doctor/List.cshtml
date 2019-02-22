@@ -1,14 +1,19 @@
 ﻿@model DoctorViewModel
 
-<div>
-    <h2>Все доктора.</h2>
+@await Html.PartialAsync("Carousel")
+<div class="m-5">
+    <h2 class="text-center">Наши специалисты:</h2>
 </div>
 <div class="container">
     <div class="row">
+        
         @foreach (var doctor in Model.Doctors)
         {
          @Html.Partial("DoctorsSummary", doctor);
         }
     </div>
 </div>
+<button type="button" class="btn btn-success  btn-lg  d-block mx-auto mt-2 mb-5" disabled >Задать вопрос</button>
+
+
 
